@@ -1,0 +1,20 @@
+Log Entry
+Monday, December 4, 20236:30:56 PM
+:
+Message Title : Title
+Message : System.DivideByZeroException: Attempted to divide by zero.
+   at ArtGallery.Controllers.ArtsController.Index() in C:\Users\parwat\source\repos\2023\Secure Programming in Web\ArtGallery\Controllers\ArtsController.cs:line 31
+--------------------------------------------
+Log Entry
+Monday, December 4, 20236:31:37 PM
+:
+Message Title : Title
+Message : System.DivideByZeroException: Attempted to divide by zero.
+   at ArtGallery.Controllers.ArtsController.Index() in C:\Users\parwat\source\repos\2023\Secure Programming in Web\ArtGallery\Controllers\ArtsController.cs:line 31
+--------------------------------------------
+Log Entry
+Monday, December 4, 20236:37:53 PM
+:
+Message Title : Title
+Message : Error
+--------------------------------------------

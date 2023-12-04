@@ -14,16 +14,26 @@ namespace ArtGallery.Controllers
     public class ArtsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _webHostevn;
 
-        public ArtsController(ApplicationDbContext context)
+        public ArtsController(ApplicationDbContext context, IWebHostEnvironment webHostevn)
         {
             _context = context;
+            _webHostevn = webHostevn;
         }
 
         // GET: Arts
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Art.ToListAsync());
+            try 
+            { 
+                return View(await _context.Art.ToListAsync());  
+            } 
+            catch (Exception ex)
+            {
+                Logevents.LogToFile("Title", ex.ToString(), _webHostevn);
+                return View();
+            }
         }
 
         // GET: Arts/ShowSearchForm
