@@ -22,9 +22,20 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
-
+//CORD implementation - start
+builder.Services.AddCors();
+//CORS implmentation - End
 
 var app = builder.Build();
+
+//CORD implementation - start
+app.UseCors(x => x
+           .AllowAnyMethod()
+           .AllowAnyHeader()
+           .AllowCredentials()
+           //.WithOrigins("https://localhost:44351")); // Allow only this origin can also have multiple origins seperated with comma
+           .SetIsOriginAllowed(origin => true));// Allow any origin  
+//CORD implementation - End
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
